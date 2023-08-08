@@ -1,0 +1,96 @@
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()"><div class="main_container">
+  
+<div class ="checkout_info">
+    
+    <p class="version">Version zero</p>
+    <h1 class="checkout_title">Checkout</h1>
+   
+    <h3 class="checkout_subtitle">
+        We offer a streamlined checkout process, safely finalize your purchase and tailor your shipping preferences for a seamless experience
+    </h3>
+
+    
+        <h4 class ="field_type">1. Contact information</h4>
+
+        <mat-form-field class="field" appearance="outline">
+            <mat-icon style="color : #B690f4" matSuffix>
+                person
+            </mat-icon>
+             <mat-label>Full name</mat-label>       
+             <input matInput style="font-size: 15px;" formControlName="cardHolderName" placeholder="Card holder name">
+        </mat-form-field>
+        <div style="padding-bottom: 10px;"></div>
+        <mat-form-field class="field" appearance="outline">
+            <mat-icon style="color:#B690F4" matSuffix>
+                payment
+            </mat-icon>
+            <mat-label> Card number</mat-label>
+                <input matInput  style="font-size: 15px;"  formControlName="cardNumber" placeholder="Card number" >
+        </mat-form-field>
+        <div style="padding-bottom: 10px;"></div>
+        <h4 class ="field_type">2. Delivery method</h4>
+       
+        <div style=" padding-left: 20px;">
+            <mat-button-toggle-group name="deliveryMethod">
+                    <mat-button-toggle value="sameDay" (click) = "updateFee('sameDay')">
+                        <mat-icon>airplanemode_active</mat-icon>
+                        Same day
+                    </mat-button-toggle>
+
+                    <mat-button-toggle value="express" (click) = "updateFee('express')">
+                        <mat-icon>fast_forward</mat-icon>
+                        Express
+                    </mat-button-toggle>
+
+                    <mat-button-toggle value="normal" (click) = "updateFee('normal')">
+                        <mat-icon>slow_motion_video</mat-icon>
+                        Normal
+                    </mat-button-toggle>
+
+                </mat-button-toggle-group>
+        </div>
+            
+   
+</div>
+      
+        <div style="  padding-top: 65px ;padding-left: 50px;    ">  <mat-card class ="payment_container">
+        <mat-card-content>
+         <img src="assets/images/pay_img_1.png" class="pay_img">
+            <h2 class="item_number">Your purshase is ready</h2>
+            <div class = "payment_line">
+                <h3 class="payment_line_title">Quantity</h3>
+                <h3>{{shoppingCartData!.totalQuantity}} items</h3>
+            </div>
+
+            <div class = "payment_line">
+                <h3 class="payment_line_title">Subtotal</h3>
+                <h3>{{shoppingCartData!.totalPrice}} TDN</h3>
+            </div>
+
+            <div class = "payment_line">
+                <h3 class="payment_line_title">Delivery service</h3>
+                <h3>+{{deliveryFee}} TDN</h3>
+            </div>
+            <div class="divider"></div>
+            <div class = "payment_line">
+                <h3 class="payment_line_title">Total</h3>
+                <h3 class="payment_line_value">{{ 
+                   getTotalPrice()
+                }} TDN</h3>
+            </div>
+
+            <div class="checkout_btns">
+            <button mat-raised-button color = "primary" class="pay_btn" type="submit">
+                Let's pay 
+            </button>
+            <button mat-stroked-button color = "primary" class="cancel_btn" (click)="cancelPayment()">
+                Cancel
+            </button>
+            
+            
+            </div>
+        </mat-card-content>
+    </mat-card></div>
+
+</div>
+</form>

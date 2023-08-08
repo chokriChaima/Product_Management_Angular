@@ -1,0 +1,39 @@
+.up_display{
+   display: flex;
+   padding-top: 80px;
+    justify-content: space-between;
+    .content{
+        padding-left: 100px;
+        padding-top: 70px;
+        .member{
+            padding-left: 3px;
+            color: #C4C5CA;
+            text-decoration: none;
+    
+        }
+    }
+    .up_image{
+        
+        padding-top: 30px;
+        padding-right: 150px;
+        height: 450px;
+    }
+    .field {
+
+
+    width: 535px;
+    }
+    .sign_up_btn{
+        width: 320px;border-radius: 50px;
+        height: 
+        45px;
+        font-size: 16px;
+    }
+    .cancel{
+        margin-left: 20px;
+         border-radius: 50px; 
+        width: 200px;
+        height: 43px;
+        font-size: 16px;
+      }
+}

@@ -1,0 +1,74 @@
+
+<div class="products_display">
+    <h2 class="pd_title">Complete Products List </h2>
+    <div class="pd_table">
+        <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+       
+        <ng-container matColumnDef="productID">
+          <th class="pd_title"  mat-header-cell *matHeaderCellDef>ID.</th>
+          <td mat-cell *matCellDef="let product">{{product.productID}}</td>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="productName">
+          <th class="pd_title" mat-header-cell *matHeaderCellDef >Product Name</th>
+          <td mat-cell *matCellDef="let product">{{product.productName}}</td>
+        </ng-container>
+      
+        <!-- ProductPrice Column -->
+        <ng-container matColumnDef="productPrice">
+          <th class="pd_title" mat-header-cell *matHeaderCellDef>Product Price</th>
+          <td mat-cell *matCellDef="let product">{{product.productPrice}} TDN</td>
+        </ng-container>
+      
+        <!-- isAvailable Column -->
+        <ng-container matColumnDef="available">
+          <th class="pd_title" mat-header-cell *matHeaderCellDef>Product Availability</th>
+          <td mat-cell *matCellDef="let product">{{product.available?"In-stock":"Out of stock"}}</td>
+        </ng-container>
+      
+        <ng-container matColumnDef="ratings">
+            <th class ="pd_title" mat-header-cell *matHeaderCellDef>Ratings  </th>
+            <td mat-cell *matCellDef="let product">{{product.ratings}} 
+
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="star">
+          <th class ="pd_title" mat-header-cell *matHeaderCellDef>  </th>
+          <td mat-cell *matCellDef="let product"> 
+            <mat-icon style="font-size: 18px;  justify-content: flex-start;" color="primary" >star</mat-icon>
+          </td>
+      </ng-container>
+
+        <div >
+          <ng-container matColumnDef="manage" >
+                  <th mat-header-cell *matHeaderCellDef></th>
+                  <td mat-cell *matCellDef="let product">
+                    <mat-icon style="margin-left: 70px;" color = "primary"  *ngIf="checkInCartStatus(product.productID)" >
+                        check
+                    </mat-icon>
+                    <button  *ngIf="!checkInCartStatus(product.productID)" [disabled]= "!product.available" mat-stroked-button color="primary" class = "addButton" (click)="addToCart(product.productID)"> 
+                      Add</button>
+                  </td>
+                </ng-container>
+        </div>
+    
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+            mat-row
+
+        
+            *matRowDef="let row; columns: displayedColumns;"
+        ></tr>
+      </table>
+    </div>
+    
+      
+     
+      
+</div>
+

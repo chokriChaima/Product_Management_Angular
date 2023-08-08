@@ -1,0 +1,47 @@
+<div class="up_display">
+    <div class="content">
+        <p class="version">Version zero</p>
+        <h1 style="font-weight: 500;">Welcome back to PM demo</h1>
+      
+            <p  class="member">
+                Please enter your acount information
+            </p>    
+         
+     <br>  
+      
+     <form [formGroup]="authenticationForm" (ngSubmit)="onSubmit()">
+          <mat-form-field class="field" appearance="outline">
+            <mat-icon style="color: #B690F4;" matSuffix>email</mat-icon>
+
+            <mat-label>Email Address</mat-label>
+
+            <input matInput formControlName="email" placeholder="User@gmail.com">
+          
+          </mat-form-field>
+          <br>
+         
+          <mat-form-field class="field" appearance="outline">
+            <mat-icon style="color: #B690F4;" matSuffix>lock</mat-icon>
+
+            <mat-label>Password</mat-label>
+
+            <input matInput formControlName="password"  placeholder="Dealer's choice">
+         
+          </mat-form-field>
+       
+      <br>
+
+      <div class="registration_btns">
+        <button type="submit"  class="sign_in_btn" mat-raised-button color="primary">
+          I'm ready to sign in
+        </button>
+             
+        <button (click) ="Cancel()" class="cancel"  mat-stroked-button color="primary">
+          Cancel
+        </button></div>
+      </form>
+        
+    </div>
+  <img class="up_image" src="assets/images/sign_in_page.png">
+</div>
+

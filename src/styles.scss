@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+// styles.scss
+
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+
+body { 
+   // background-color: ;
+    font-family: Roboto, 
+    "Helvetica Neue", 
+    sans-serif; }
+
+    .version{
+      color: #B690F4;
+      font-weight: bold;
+    }
+
+    
+    .registration_btns{
+      display: flex;
+    padding-top :20px;
+      .in{
+        height: 43px;
+        font-size: 18px;
+         border-radius: 50px; 
+        width: 400px;
+      }
+      .up{
+        margin-left: 20px;
+         border-radius: 50px; 
+        width: 250px;
+        height: 43px;
+        font-size: 18px;
+      }
+       
+        /* Adjust the value to control the roundness of the edges */
+    
+    }
+
+    .error-message {
+      color: red;
+      font-size: 12px;
+      margin-top: 5px;
+    }

@@ -1,0 +1,71 @@
+
+<div class="content">
+    <div style="display: flex;">
+      <img src="assets/images/icons/edit.png" class="img_icon">
+        <h1 class="title">Product Management</h1>
+        <div style="margin-right : 210px"></div>
+        
+       <!--<img src="assets/images/icons/exit.png" class="img_icon">--> 
+    </div>
+
+   
+    <form [formGroup] = "productManagementForm" (ngSubmit)="onSubmit()">
+        <h2 class="subtitle">1.Product Details</h2>
+        <mat-form-field class="field" appearance="outline">
+            <mat-icon style="color: #B690F4;" matSuffix>
+                local_offer
+            </mat-icon>
+            <mat-label>Product Name</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+            <mat-form-field class="field" appearance="outline">
+                <mat-icon style="color: #B690F4;" matSuffix>
+                    price_check
+                </mat-icon>
+                <mat-label>Product Price</mat-label>
+                <input type="number" matInput formControlName="price">
+        </mat-form-field>
+
+     
+        <!-- <mat-form-field class="field" appearance="outline">
+            <mat-icon style="color: #B690F4;" matSuffix>
+                numbers
+            </mat-icon>
+            <mat-label>Product Quantity</mat-label>
+            <input type="number" matInput formControlName="price">
+    </mat-form-field> -->
+        <h2 class="subtitle">2.Product Inventory</h2> 
+        <div  class="input_line">
+            <h3 class="input_title">Product Availability</h3>
+    
+            <section >
+                <mat-slide-toggle
+                    color=#BE63F9
+                    [checked]="product.available"
+                    (change)="product.available= $event.source.checked">      
+                </mat-slide-toggle>
+              </section>
+        </div>
+      
+        <mat-form-field class="field" appearance="outline">
+            <mat-icon style="color: #B690F4;" matSuffix>
+                numbers
+            </mat-icon>
+            <mat-label>Product Quantity</mat-label>
+            <input type="number" matInput formControlName="quantity">
+    </mat-form-field>
+
+ 
+    <div class="pm_btns">
+        <button mat-raised-button color = "primary" class="done_btn" type="submit">
+            Done
+        </button>
+        <button mat-stroked-button  mat-dialog-close color = "primary" class="cancel_btn" >
+            Close
+        </button>
+        
+        
+        </div>
+    </form>
+    
+</div>

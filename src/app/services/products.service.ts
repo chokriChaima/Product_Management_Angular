@@ -19,4 +19,25 @@ export class ProductsService {
   getProducts() : Observable<Product[]>{
     return this.httpClient.get<Product[]>(this.getProductsUrl);
   } 
+
+  deleteProduct(productID : string)  {
+    console.info("product id ", productID);
+    return this.httpClient.delete(this.getProductsUrl+"/"+productID);
+  }
+
+  setAvailability(productID : string, isAvailable : boolean) : Observable<boolean>{
+    return this.httpClient.post<boolean>(
+      this.getProducts+"/"+productID+"/availability",
+      {
+        id : productID,
+        status : isAvailable
+      }) ;
+  }
+
+  editProduct(product : Product) : Observable<Product>{
+   return this.httpClient.put<Product>(
+      this.getProductsUrl+"/"+product.productID, product
+    )
+  }
+  
 }

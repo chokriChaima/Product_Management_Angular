@@ -1,0 +1,17 @@
+
+
+<div *ngIf="!emptyPayments()" >
+    <div class="payment_item"  *ngFor="let payment of userPayments">
+    <div style="display: flex; justify-content: space-around; width: 100%;">
+         <p class="item_title"> 
+            Payment recite, made by {{payment!.cardHolderName}}
+    </p>
+    <button class="delete_btn" color = "primary"mat-stroked-button (click)="deletePaymentById(payment.paymentID!)">Delete</button>
+    </div>
+    <div class="divider"></div>
+</div>
+</div>
+
+<div class="empty_payemnts" *ngIf="emptyPayments()">
+Your history is currently empty.
+</div>

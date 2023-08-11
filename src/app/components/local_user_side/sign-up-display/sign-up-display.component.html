@@ -1,0 +1,58 @@
+<div class="up_display">
+    <div class="content">
+        <p class="version">Version zero</p>
+        <h1 style="font-weight: 500;">Sign Up to PM demo</h1>
+        <div>   
+            <a routerLink="/sign-in-display" class="member">
+                Already a member, please log in through here
+             </a>    
+         </div>
+         
+     <br>  
+     <form  [formGroup] = "registrationForm" (ngSubmit) = "onSubmit()">
+       <mat-form-field class="field" appearance="outline">
+            <mat-icon style="color: #B690F4;" matSuffix>person</mat-icon>
+            <mat-label>User Name</mat-label>
+
+            <input matInput  formControlName="userName" placeholder="UserAnythingYouWant">
+            <mat-error class="error-message" *ngIf="registrationForm.get('userName')!.invalid && registrationForm.get('userName')!.touched">
+              {{ getErrorMessage('userName') }}
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="field" appearance="outline">
+            <mat-icon style="color: #B690F4;" matSuffix>email</mat-icon>
+
+            <mat-label>Email Address</mat-label>
+
+            <input matInput formControlName="email" placeholder="User@gmail.com">
+            <mat-error class="error-message" *ngIf="registrationForm.get('email')!.invalid && registrationForm.get('email')!.touched">
+              {{ getErrorMessage('email') }}
+            </mat-error>
+          </mat-form-field>
+          <br>
+         
+          <mat-form-field class="field" appearance="outline">
+            <mat-icon style="color: #B690F4;" matSuffix>lock</mat-icon>
+
+            <mat-label>Password</mat-label>
+
+            <input matInput formControlName="password"  placeholder="Dealer's choice">
+            <mat-error class="error-message" *ngIf="registrationForm.get('password')!.invalid && registrationForm.get('password')!.touched">
+              {{ getErrorMessage('password') }}
+            </mat-error>
+          </mat-form-field>
+          <Br>
+            <div class="registration_btns">
+            <button type="submit"  class="sign_up_btn" mat-raised-button color="primary">
+              Let's sign me up
+            </button>
+            <button (click) ="Cancel()" class="cancel"  mat-stroked-button color="primary">
+              Cancel
+            </button>
+      </div>
+       
+    </form>
+    </div>
+  <img class="up_image" src="assets/images/sign_up_page.png">
+</div>

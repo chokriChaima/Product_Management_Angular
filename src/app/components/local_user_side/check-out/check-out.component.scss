@@ -1,0 +1,102 @@
+.main_container{
+    display: flex;
+    background-color: #FBFBFB;
+    padding-left: 100px ; 
+    .checkout_info{
+        padding-top: 110px ;
+        width: 50%;
+      .checkout_title{
+        font-size: 55px;
+        padding-top : 20px;
+        padding-bottom : 10px;
+        font-weight: normal;
+      }   
+      .checkout_subtitle{
+        color: #C4C5CA;
+        padding-right :100px;
+      }
+      .field_type{
+      
+        font-size: 17px;
+      }
+      .field{
+        padding-left: 20px;
+        width: 570px;
+      }
+      
+      .mat-button-toggle {
+        width: 190px;
+        font-size: 15.5px;
+
+        
+      }
+
+      .mat-button-toggle-checked{
+       background-color: #7E57C2;
+       color: #F4F4F4;
+      }
+    }
+    .payment_container{
+    box-shadow: 0 2px 1px 0px #F4F4F4, 
+            0 1px 1px 0 #cccfd1, 
+            0 1px 0px 0 #cccfd1;
+      width: 400px;
+      height: 585px;
+      
+     
+      .payment_line{
+        display: flex;
+        padding-left:30px;
+        padding-right: 30px;
+       
+        justify-content: space-between;
+
+        .payment_line_title{
+                font-size: 17.8px;
+                color: #C4C5CA;
+        }
+        .payment_line_value{
+            color:  #B690F4;;
+        }
+
+      }
+
+      
+      .item_number{
+        text-align: justify;
+        padding-left: 20px;
+        font-size: 27px;
+        color: #37474F;
+        font-weight: 400;
+        padding-top:20px;
+        padding-bottom:10px;
+        
+      }
+        .pay_img{
+            padding-top: 20px;
+            padding-left: 16%;
+            width: 230px;
+           
+        }
+        .checkout_btns{
+            display: flex;
+            justify-content: space-between;
+            padding-left: 10px;
+            padding-right: 10px;
+            .cancel_btn{
+                height: 40px;
+                font-size: 15px;
+                 border-radius: 50px; 
+                width: 130px;
+            }
+
+            .pay_btn{
+                height: 40px;
+                font-size: 16px;
+                 border-radius: 50px; 
+                width: 200px;
+                
+            }
+        }
+    }
+}
